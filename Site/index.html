@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>🎵 Five Finger Death Punch</title>
+    <style>
+        /* ТВОИ СУЩЕСТВУЮЩИЕ СТИЛИ - НЕ МЕНЯЕМ */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f0f8ff, #fff0f5);
+        }
+        .menu {
+            text-align: center;
+            background: linear-gradient(135deg, #1E90FF, #FF4500);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .menu a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        h1, h2, h3 {
+            color: #1E90FF;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        .content-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #1E90FF;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 10px;
+            border-top: 2px solid #1E90FF;
+        }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1E90FF, #FF4500);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .btn {
+            background: linear-gradient(135deg, #1E90FF, #FF4500);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <!-- ПОДКЛЮЧАЕМ ВНЕШНИЙ CSS ФАЙЛ -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- ТВОЕ ОРИГИНАЛЬНОЕ МЕНЮ СВЕРХУ ОСТАЕТСЯ ПЕРВЫМ -->
+    <div class="menu">
+        <a href="index.html">🏠 Главная</a>
+        <a href="Info.html">ℹ️ Общая информация</a>
+        <a href="History.html">📜 История</a>
+        <a href="Disc.html">💿 Дискография</a>
+        <a href="Film.html">🎬 Видеография</a>
+        <a href="Links.html">🔗 Источники</a>
+        <a href="Shop.html">🛒 Заказать Альбом</a>
+        <a href="Contacts.html">📞 Контакты</a>
+    </div>
+
+    <!-- СЕМАНТИЧЕСКАЯ СТРУКТУРА: HEADER -->
+    <header>
+        <!-- ТВОЙ СУЩЕСТВУЮЩИЙ ГЕРОЙ-БЛОК -->
+        <div class="hero">
+            <h1>🎸 Добро пожаловать на сайт Five Finger Death Punch! 🤘</h1>
+            <p style="font-size: 18px; margin-top: 10px;">Самый полный русскоязычный ресурс о легендарной метал-группе</p>
+        </div>
+    </header>
+
+    <!-- СЕМАНТИЧЕСКАЯ СТРУКТУРА: MAIN -->
+    <main>
+        <!-- ТВОЙ СУЩЕСТВУЮЩИЙ КОНТЕНТ -->
+        <div class="content-box">
+            <h2>🔥 О группе</h2>
+            <p>Five Finger Death Punch (FFDP) - американская грув-метал группа из Лос-Анджелеса, 
+            основанная в 2005 году. Известна своим агрессивным звучанием и глубокими текстами.</p>
+        </div>
+
+        <!-- ТВОЯ СУЩЕСТВУЮЩАЯ СЕТКА ФИЧЕЙ -->
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🎵 Дискография</h3>
+                <p>9 студийных альбомов</p>
+                <p>🎶 Более 3 млн проданных копий</p>
+                <a href="Disc.html" class="btn">Смотреть альбомы</a>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🎬 Видеоклипы</h3>
+                <p>📺 Миллионы просмотров</p>
+                <p>⭐ Популярные хиты</p>
+                <a href="Film.html" class="btn">Смотреть клипы</a>
+            </div>
+            
+            <div class="feature-card">
+                <h3>📖 История</h3>
+                <p>🚀 С 2005 года</p>
+                <p>🏆 Множество наград</p>
+                <a href="History.html" class="btn">Узнать историю</a>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🛒 Магазин</h3>
+                <p>💿 CD и винил</p>
+                <p>🎁 Эксклюзивные издания</p>
+                <a href="Shop.html" class="btn">Заказать</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- СЕМАНТИЧЕСКАЯ СТРУКТУРА: FOOTER -->
+    <footer>
+        <!-- ТВОЙ СУЩЕСТВУЮЩИЙ ФУТЕР -->
+        <div class="footer">
+            <p>🎵 <strong>Five Finger Death Punch Fan Site</strong> 🎵</p>
+            <p>📧 <em>Борисов-Жаров Н.А., БЭР2301. 2025</em> 📧</p>
+        </div>
+    </footer>
+</body>
+</html>

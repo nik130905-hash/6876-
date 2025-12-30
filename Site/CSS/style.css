@@ -1,0 +1,160 @@
+/* Основные стили для всего сайта */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f0f8ff, #fff0f5);
+    margin: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Шапка сайта */
+header {
+    background: linear-gradient(135deg, #1E90FF, #FF4500);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Навигация */
+nav {
+    background: linear-gradient(135deg, #1E90FF, #FF4500);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* Основное содержание */
+main {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Подвал сайта */
+footer {
+    background: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    border-top: 2px solid #1E90FF;
+    margin-top: 30px;
+}
+
+/* Стили для контентных блоков */
+.content-section {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 4px solid #1E90FF;
+}
+
+.content-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 4px solid #1E90FF;
+}
+
+/* Стили для заголовков */
+h1, h2, h3 {
+    color: #1E90FF;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 2px solid #FF4500;
+    padding-bottom: 10px;
+    margin-top: 25px;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #FF4500;
+    margin-top: 20px;
+}
+
+/* Стили для текста */
+p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Стили для ссылок */
+a {
+    color: #1E90FF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FF4500;
+    text-decoration: underline;
+}
+
+/* Утилитарные классы */
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}

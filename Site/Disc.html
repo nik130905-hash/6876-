@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💿 Дискография - Five Finger Death Punch</title>
+    <style>
+        body { 
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+            margin: 20px; 
+            line-height: 1.6; 
+            background: linear-gradient(135deg, #f0f8ff, #fff0f5); 
+        }
+        .menu { 
+            text-align: center; 
+            background: linear-gradient(135deg, #1E90FF, #FF4500); 
+            padding: 15px; 
+            border-radius: 10px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+        }
+        .menu a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: bold; 
+            margin: 0 10px; 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            transition: background 0.3s; 
+        }
+        .menu a:hover { 
+            background: rgba(255,255,255,0.2); 
+        }
+        h1, h2, h3 { 
+            color: #1E90FF; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1); 
+        }
+        .content-box { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin: 15px 0; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+            border-left: 4px solid #1E90FF; 
+        }
+        .footer { 
+            text-align: center; 
+            margin-top: 30px; 
+            padding: 15px; 
+            background: #f8f8f8; 
+            border-radius: 10px; 
+            border-top: 2px solid #1E90FF; 
+        }
+        .album-container { 
+            display: flex; 
+            align-items: center; 
+            margin: 15px 0; 
+            padding: 20px; 
+            background: #f8f8f8; 
+            border-radius: 10px; 
+            border-left: 4px solid #FF4500; 
+            transition: transform 0.2s; 
+        }
+        .album-container:hover { 
+            transform: translateX(5px); 
+            background: #e6f7ff; 
+        }
+        .album-cover { 
+            width: 100px; 
+            height: 100px; 
+            margin-right: 20px; 
+            border: 3px solid #1E90FF; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
+            object-fit: cover; 
+        }
+        .album-cover-placeholder {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #1E90FF, #FF4500);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10px;
+            border-radius: 8px;
+            border: 3px solid #1E90FF;
+            margin-right: 20px;
+            padding: 5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .album-info { 
+            flex-grow: 1; 
+        }
+        .album-title { 
+            font-size: 20px; 
+            font-weight: bold; 
+            color: #1E90FF; 
+            margin-bottom: 8px; 
+        }
+        .album-details { 
+            color: #666; 
+            margin-bottom: 10px; 
+            font-size: 14px; 
+        }
+        .stream-links { 
+            margin-top: 10px; 
+        }
+        .stream-btn { 
+            background: #1E90FF; 
+            color: white; 
+            padding: 6px 12px; 
+            text-decoration: none; 
+            border-radius: 15px; 
+            font-size: 12px; 
+            margin-right: 8px; 
+            margin-bottom: 5px; 
+            display: inline-block; 
+            transition: all 0.3s; 
+            border: none; 
+            cursor: pointer; 
+        }
+        .stream-btn:hover { 
+            background: #FF4500; 
+            transform: scale(1.05); 
+        }
+        .download-btn { 
+            background: #28a745; 
+            color: white; 
+            padding: 6px 12px; 
+            text-decoration: none; 
+            border-radius: 15px; 
+            font-size: 12px; 
+            margin-right: 8px; 
+            margin-bottom: 5px; 
+            display: inline-block; 
+            transition: all 0.3s; 
+            border: none; 
+            cursor: pointer; 
+        }
+        .download-btn:hover { 
+            background: #218838; 
+            transform: scale(1.05); 
+        }
+        .year-header { 
+            background: linear-gradient(135deg, #1E90FF, #FF4500); 
+            color: white; 
+            padding: 12px 25px; 
+            border-radius: 25px; 
+            display: inline-block; 
+            margin: 25px 0 15px 0; 
+            font-weight: bold; 
+            font-size: 18px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+        }
+        .stats-box { 
+            background: linear-gradient(135deg, #1E90FF, #FF4500); 
+            color: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin: 20px 0; 
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+        }
+        .achievement { 
+            background: #e6f7ff; 
+            padding: 8px 15px; 
+            border-radius: 15px; 
+            display: inline-block; 
+            margin: 5px; 
+            font-size: 12px; 
+            font-weight: bold; 
+            color: #1E90FF; 
+        }
+        .download-notice { 
+            background: #e6f7ff; 
+            padding: 15px; 
+            border-radius: 10px; 
+            margin: 20px 0; 
+            text-align: center; 
+            border-left: 4px solid #28a745; 
+        }
+    </style>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="menu">
+        <a href="index.html">🏠 Главная</a>
+        <a href="Info.html">ℹ️ Общая информация</a>
+        <a href="History.html">📜 История</a>
+        <a href="Disc.html">💿 Дискография</a>
+        <a href="Film.html">🎬 Видеография</a>
+        <a href="Links.html">🔗 Источники</a>
+        <a href="Shop.html">🛒 Заказать Альбом</a>
+        <a href="Contacts.html">📞 Контакты</a>
+    </div>
+
+    <div class="content-box">
+        <h1>💿 Дискография Five Finger Death Punch</h1>
+        <p>🎶 Полная коллекция студийных альбомов + ссылки для скачивания</p>
+    </div>
+
+    <div class="download-notice">
+        <h3>📥 Доступно для скачивания</h3>
+        <p>💚 Нажмите кнопку "📥 Скачать" под каждым альбомом для загрузки</p>
+        <p>⚡ Быстрое скачивание | 🎵 Высокое качество | 🔒 Без вирусов</p>
+    </div>
+
+    <div class="stats-box">
+        <h2>📊 Музыкальная статистика FFDP</h2>
+        <p>🎵 <strong>9 студийных альбомов</strong> | 📀 <strong>3+ млн проданных копий</strong> | 🌍 <strong>Мировое признание</strong></p>
+    </div>
+
+    <div class="content-box">
+        <!-- The Way of the Fist -->
+        <div class="year-header">🚀 2007 - The Way of the Fist</div>
+        <div class="album-container">
+            <img src="IMAGES/album_way_of_fist.jpg" alt="The Way of the Fist" class="album-cover" 
+                 onerror="this.parentNode.innerHTML='<div class=\"album-cover-placeholder\">The Way of the Fist</div>' + this.parentNode.innerHTML;">
+            <div class="album-info">
+                <div class="album-title">🎸 The Way of the Fist</div>
+                <div class="album-details">
+                    <span class="achievement">⭐ Дебютный альбом</span>
+                    <span class="achievement">🏆 Золотой статус</span>
+                    <span class="achievement">📅 31 июля 2007</span>
+                    <span class="achievement">📀 11 треков</span>
+                </div>
+                <p>🔥 Легендарный дебют, задавший стандарты грув-метала. Альбом достиг 107-го места в Billboard 200.</p>
+                <div class="stream-links">
+                    <a href="https://open.spotify.com/album/5ltJ5SyKj7oY6yHG7f2oM5" target="_blank" class="stream-btn">🎵 Spotify</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_nv4kH9Vq4qQ8f9J9J9J9J9J9J9J9J9J9J" target="_blank" class="stream-btn">📺 YouTube Music</a>
+                    <a href="https://music.apple.com/us/album/the-way-of-the-fist/284853184" target="_blank" class="stream-btn">🍎 Apple Music</a>
+                    <a href="https://example.com/download/way_of_fist_mp3.zip" target="_blank" class="download-btn">📥 Скачать MP3</a>
+                    <a href="https://example.com/download/way_of_fist_flac.zip" target="_blank" class="download-btn">📥 Скачать FLAC</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- War Is the Answer -->
+        <div class="year-header">🎸 2009 - War Is the Answer</div>
+        <div class="album-container">
+            <img src="IMAGES/album_war_is_answer.jpg" alt="War Is the Answer" class="album-cover" 
+                 onerror="this.parentNode.innerHTML='<div class=\"album-cover-placeholder\">War Is the Answer</div>' + this.parentNode.innerHTML;">
+            <div class="album-info">
+                <div class="album-title">💥 War Is the Answer</div>
+                <div class="album-details">
+                    <span class="achievement">⭐ Платиновый альбом</span>
+                    <span class="achievement">📈 7-е место Billboard</span>
+                    <span class="achievement">📅 22 сентября 2009</span>
+                    <span class="achievement">📀 13 треков</span>
+                </div>
+                <p>💪 Альбом, принесший группе мировую известность. Включает хит "Bad Company".</p>
+                <div class="stream-links">
+                    <a href="https://open.spotify.com/album/5wqJcLJsFqVg1lhh9auCx7" target="_blank" class="stream-btn">🎵 Spotify</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_kv4kH9Vq4qQ8f9J9J9J9J9J9J9J9J9J9J" target="_blank" class="stream-btn">📺 YouTube Music</a>
+                    <a href="https://music.apple.com/us/album/war-is-the-answer/3345" target="_blank" class="stream-btn">🍎 Apple Music</a>
+                    <a href="https://example.com/download/war_is_answer_mp3.zip" target="_blank" class="download-btn">📥 Скачать MP3</a>
+                    <a href="https://example.com/download/war_is_answer_flac.zip" target="_blank" class="download-btn">📥 Скачать FLAC</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- American Capitalist -->
+        <div class="year-header">🌟 2011 - American Capitalist</div>
+        <div class="album-container">
+            <img src="IMAGES/album_american_capitalist.jpg" alt="American Capitalist" class="album-cover" 
+                 onerror="this.parentNode.innerHTML='<div class=\"album-cover-placeholder\">American Capitalist</div>' + this.parentNode.innerHTML;">
+            <div class="album-info">
+                <div class="album-title">🇺🇸 American Capitalist</div>
+                <div class="album-details">
+                    <span class="achievement">⭐ 3-е место Billboard</span>
+                    <span class="achievement">🎵 Платиновый статус</span>
+                    <span class="achievement">📅 11 октября 2011</span>
+                    <span class="achievement">📀 11 треков</span>
+                </div>
+                <p>💰 Критика капитализма через призму хэви-метала. Один из самых успешных альбомов группы.</p>
+                <div class="stream-links">
+                    <a href="https://open.spotify.com/album/4yC1Wqv4FfBtC0Q19a7h4d" target="_blank" class="stream-btn">🎵 Spotify</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_lv4kH9Vq4qQ8f9J9J9J9J9J9J9J9J9J9J" target="_blank" class="stream-btn">📺 YouTube Music</a>
+                    <a href="https://music.apple.com/us/album/american-capitalist/467" target="_blank" class="stream-btn">🍎 Apple Music</a>
+                    <a href="https://example.com/download/american_capitalist_mp3.zip" target="_blank" class="download-btn">📥 Скачать MP3</a>
+                    <a href="https://example.com/download/american_capitalist_flac.zip" target="_blank" class="download-btn">📥 Скачать FLAC</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Wrong Side of Heaven Vol. 1 -->
+        <div class="year-header">🎭 2013 - The Wrong Side of Heaven Vol. 1</div>
+        <div class="album-container">
+            <img src="IMAGES/album_wrong_side_1.jpg" alt="The Wrong Side of Heaven Vol. 1" class="album-cover" 
+                 onerror="this.parentNode.innerHTML='<div class=\"album-cover-placeholder\">Wrong Side Vol.1</div>' + this.parentNode.innerHTML;">
+            <div class="album-info">
+                <div class="album-title">😇 The Wrong Side of Heaven and the Righteous Side of Hell, Volume 1</div>
+                <div class="album-details">
+                    <span class="achievement">⭐ 2-е место Billboard</span>
+                    <span class="achievement">🎪 Мировое турне</span>
+                    <span class="achievement">📅 30 июля 2013</span>
+                    <span class="achievement">📀 13 треков</span>
+                </div>
+                <p>👼 Первая часть концептуального двойного альбома о борьбе добра и зла.</p>
+                <div class="stream-links">
+                    <a href="https://open.spotify.com/album/5l2VASO9Wq6tpb6dptRk0U" target="_blank" class="stream-btn">🎵 Spotify</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_mv4kH9Vq4qQ8f9J9J9J9J9J9J9J9J9J9J" target="_blank" class="stream-btn">📺 YouTube Music</a>
+                    <a href="https://music.apple.com/us/album/the-wrong-side-of-heaven-vol-1/123" target="_blank" class="stream-btn">🍎 Apple Music</a>
+                    <a href="https://example.com/download/wrong_side_1_mp3.zip" target="_blank" class="download-btn">📥 Скачать MP3</a>
+                    <a href="https://example.com/download/wrong_side_1_flac.zip" target="_blank" class="download-btn">📥 Скачать FLAC</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Wrong Side of Heaven Vol. 2 -->
+        <div class="album-container">
+            <img src="IMAGES/album_wrong_side_2.jpg" alt="The Wrong Side of Heaven Vol. 2" class="album-cover" 
+                 onerror="this.parentNode.innerHTML='<div class=\"album-cover-placeholder\">Wrong Side Vol.2</div>' + this.parentNode.innerHTML;">
+            <div class="album-info">
+                <div class="album-title">😈 The Wrong Side of Heaven and the Righteous Side of Hell, Volume 2</div>
+                <div class="album-details">
+                    <span class="achievement">⭐ 2-е место Billboard</span>
+                    <span class="achievement">🎵 Продолжение концепции</span>
+                    <span class="achievement">📅 19 ноября 2013</span>
+                    <span class="achievement">📀 12 треков</span>
+                </div>
+                <p>👹 Вторая часть двойного альбома, завершающая эпическую сагу.</p>
+                <div class="stream-links">
+                    <a href="https://open.spotify.com/album/5l2VASO9Wq6tpb6dptRk0U" target="_blank" class="stream-btn">🎵 Spotify</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_nv4kH9Vq4qQ8f9J9J9J9J9J9J9J9J9J9J" target="_blank" class="stream-btn">📺 YouTube Music</a>
+                    <a href="https://music.apple.com/us/album/the-wrong-side-of-heaven-vol-2/456" target="_blank" class="stream-btn">🍎 Apple Music</a>
+                    <a href="https://example.com/download/wrong_side_2_mp3.zip" target="_blank" class="download-btn">📥 Скачать MP3</a>
+                    <a href="https://example.com/download/wrong_side_2_flac.zip" target="_blank" class="download-btn">📥 Скачать FLAC</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Got Your Six -->
+        <div class="year-header">💪 2015 - Got Your Six</div>
+        <div class="album-container">
+            <img src="IMAGES/album_got_your_six.jpg" alt="Got Your Six" class="album-cover" 
+                 onerror="this.parentNode.innerHTML='<div class=\"album-cover-placeholder\">Got Your Six</div>' + this.parentNode.innerHTML;">
+            <div class="album-info">
+                <div class="album-title">🪖 Got Your Six</div>
+                <div class="album-details">
+                    <span class="achievement">⭐ 2-е место Billboard</span>
+                    <span class="achievement">🎵 Военная тематика</span>
+                    <span class="achievement">📅 4 сентября 2015</span>
+                    <span class="achievement">📀 11 треков</span>
+                </div>
+                <p>🪖 Альбом с военной тематикой, посвященный ветеранам и военнослужащим.</p>
+                <div class="stream-links">
+                    <a href="https://open.spotify.com/album/0Qk2yR4NbCqySaOlLhSnl1" target="_blank" class="stream-btn">🎵 Spotify</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_ov4kH9Vq4qQ8f9J9J9J9J9J9J9J9J9J9J" target="_blank" class="stream-btn">📺 YouTube Music</a>
+                    <a href="https://music.apple.com/us/album/got-your-six/987" target="_blank" class="stream-btn">🍎 Apple Music</a>
+                    <a href="https://example.com/download/got_your_six_mp3.zip" target="_blank" class="download-btn">📥 Скачать MP3</a>
+                    <a href="https://example.com/download/got_your_six_flac.zip" target="_blank" class="download-btn">📥 Скачать FLAC</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- And Justice for None -->
+        <div class="year-header">⚖️ 2018 - And Justice for None</div>
+        <div class="album-container">
+            <img src="IMAGES/album_justice_none.jpg" alt="And Justice for None" class="album-cover" 
+                 onerror="this.parentNode.innerHTML='<div class=\"album-cover-placeholder\">Justice for None</div>' + this.parentNode.innerHTML;">
+            <div class="album-info">
+                <div class="album-title">⚖️ And Justice for None</div>
+                <div class="album-details">
+                    <span class="achievement">⭐ 4-е место Billboard</span>
+                    <span class="achievement">🎵 Социальная тематика</span>
+                    <span class="achievement">📅 18 мая 2018</span>
+                    <span class="achievement">📀 13 треков</span>
+                </div>
+                <p>⚖️ Альбом с социальным посылом о несправедливости в современном мире.</p>
+                <div class="stream-links">
+                    <a href="https://open.spotify.com/album/5E3VgF0awGA6ZOf5bYGbks" target="_blank" class="stream-btn">🎵 Spotify</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_pv4kH9Vq4qQ8f9J9J9J9J9J9J9J9J9J9J" target="_blank" class="stream-btn">📺 YouTube Music</a>
+                    <a href="https://music.apple.com/us/album/and-justice-for-none/654" target="_blank" class="stream-btn">🍎 Apple Music</a>
+                    <a href="https://example.com/download/justice_none_mp3.zip" target="_blank" class="download-btn">📥 Скачать MP3</a>
+                    <a href="https://example.com/download/justice_none_flac.zip" target="_blank" class="download-btn">📥 Скачать FLAC</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- F8 -->
+        <div class="year-header">🎛️ 2020 - F8</div>
+        <div class="album-container">
+            <img src="IMAGES/album_f8.jpg" alt="F8" class="album-cover" 
+                 onerror="this.parentNode.innerHTML='<div class=\"album-cover-placeholder\">F8</div>' + this.parentNode.innerHTML;">
+            <div class="album-info">
+                <div class="album-title">🎛️ F8</div>
+                <div class="album-details">
+                    <span class="achievement">⭐ 8-е место Billboard</span>
+                    <span class="achievement">🎵 Восьмой студийный</span>
+                    <span class="achievement">📅 28 февраля 2020</span>
+                    <span class="achievement">📀 14 треков</span>
+                </div>
+                <p>🎛️ Восьмой студийный альбом, символизирующий перезагрузку и новое начало.</p>
+                <div class="stream-links">
+                    <a href="https://open.spotify.com/album/7vA4cOqlEF6HwQc8W0h8VZ" target="_blank" class="stream-btn">🎵 Spotify</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_qv4kH9Vq4qQ8f9J9J9J9J9J9J9J9J9J9J" target="_blank" class="stream-btn">📺 YouTube Music</a>
+                    <a href="https://music.apple.com/us/album/f8/789" target="_blank" class="stream-btn">🍎 Apple Music</a>
+                    <a href="https://example.com/download/f8_mp3.zip" target="_blank" class="download-btn">📥 Скачать MP3</a>
+                    <a href="https://example.com/download/f8_flac.zip" target="_blank" class="download-btn">📥 Скачать FLAC</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AfterLife -->
+        <div class="year-header">👻 2022 - AfterLife</div>
+        <div class="album-container">
+            <img src="IMAGES/album_afterlife.jpg" alt="AfterLife" class="album-cover" 
+                 onerror="this.parentNode.innerHTML='<div class=\"album-cover-placeholder\">AfterLife</div>' + this.parentNode.innerHTML;">
+            <div class="album-info">
+                <div class="album-title">👻 AfterLife</div>
+                <div class="album-details">
+                    <span class="achievement">⭐ 10-е место Billboard</span>
+                    <span class="achievement">🎵 Девятый студийный</span>
+                    <span class="achievement">📅 19 августа 2022</span>
+                    <span class="achievement">📀 12 треков</span>
+                </div>
+                <p>👻 Девятый студийный альбом, исследующий темы жизни после смерти и перерождения.</p>
+                <div class="stream-links">
+                    <a href="https://open.spotify.com/album/5x2WgQ0TvcrB0N2TIhYt0I" target="_blank" class="stream-btn">🎵 Spotify</a>
+                    <a href="https://music.youtube.com/playlist?list=OLAK5uy_rv4kH9Vq4qQ8f9J9J9J9J9J9J9J9J9J9J" target="_blank" class="stream-btn">📺 YouTube Music</a>
+                    <a href="https://music.apple.com/us/album/afterlife/1234" target="_blank" class="stream-btn">🍎 Apple Music</a>
+                    <a href="https://example.com/download/afterlife_mp3.zip" target="_blank" class="download-btn">📥 Скачать MP3</a>
+                    <a href="https://example.com/download/afterlife_flac.zip" target="_blank" class="download-btn">📥 Скачать FLAC</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-box" style="text-align: center;">
+        <h3>🎧 Слушайте Five Finger Death Punch на всех платформах</h3>
+        <p>
+            <a href="https://open.spotify.com/artist/5tc4EBcD03ea2GW4H5jSsE" target="_blank" class="stream-btn" style="font-size: 14px;">🎵 Spotify</a>
+            <a href="https://music.youtube.com/channel/UC_qoJfhZ3OKB1RV2gWesAeA" target="_blank" class="stream-btn" style="font-size: 14px;">📺 YouTube Music</a>
+            <a href="https://music.apple.com/us/artist/five-finger-death-punch/284853184" target="_blank" class="stream-btn" style="font-size: 14px;">🍎 Apple Music</a>
+        </p>
+    </div>
+
+    <div class="footer">
+        <p>🎵 <strong>Five Finger Death Punch Fan Site</strong> 🎵</p>
+        <p>📧 <em>Борисов-Жаров Н.А., БЭР2301. 2025</em> 📧</p>
+    </div>
+</body>
+</html>
